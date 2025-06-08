@@ -19,7 +19,7 @@ def callback(request):
         'client_id': '2392720368406147',
         'client_secret': 'f1GThB6n9jyCbAgFgK4eWJNsipjGlPwd',
         'code': request.GET.get('code'),
-        'redirect_uri': 'https://admin.elmejorprecio.mx/auth/callback'
+        'redirect_uri': 'https://admin.elmejorprecio.mx'
     }
     response = requests.post(url, headers=headers, data=data)
     print('////////////////////////////////////////////////////////////////////////////////////')
