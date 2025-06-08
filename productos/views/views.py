@@ -7,5 +7,5 @@ from productos.utility import build_products
 
 @api_view(['POST'])
 def product(request):
-    products = build_products(request.data.get('product'))
+    products = build_products(request.data.get('product'), request.data.get('limit'), request.data.get('offset'))
     return Response(products)
