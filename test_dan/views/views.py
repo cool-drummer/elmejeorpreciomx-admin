@@ -11,12 +11,16 @@ def test(request):
     response = requests.get(url)
     if response.status_code == 200:
         print('///////////////////////////////////////////')
-        print(user_data)
+        print(response)
         print('///////////////////////////////////////////')
-        user_data = response.json()
-        print('--------------------------------------')
-        print(user_data)
-        print('--------------------------------------')
+        try:
+            user_data = response.json()
+            print('--------------------------------------')
+            print(user_data)
+            print('--------------------------------------')
+        except Exception as ex:
+            print(ex)
+            return Response({"PUTO": "DAN"})
     else:
         print('**************************************')
         print(f"Error {response.status_code}: {response.text}")
