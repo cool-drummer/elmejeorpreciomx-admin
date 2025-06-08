@@ -6,12 +6,13 @@ import requests
 
 @api_view(['GET'])
 def test(request):
-    url = "https://api.mercadolibre.com/users/me"
-    headers = {
-        "Authorization": "Bearer 6092293103071468-060113-eea6d10dd6e1b71c8ba9a7ac4fd0ba7b-1312992254"
-    }
-    response = requests.get(url, headers=headers)
+    url = "https://auth.mercadolibre.com.mx/authorization?response_type=code&client_id=2392720368406147&redirect_uri=https://admin.elmejorprecio.mx/auth/callback"
+    # url = "https://api.mercadolibre.com/users/me"
+    response = requests.get(url)
     if response.status_code == 200:
+        print('///////////////////////////////////////////')
+        print(user_data)
+        print('///////////////////////////////////////////')
         user_data = response.json()
         print('--------------------------------------')
         print(user_data)

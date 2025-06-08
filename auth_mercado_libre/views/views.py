@@ -4,9 +4,9 @@ from rest_framework.response import Response
 # import requests
 
 
-@api_view(['POST'])
+@api_view(['GET'])
 def callback(request):
     print('////////////////////////////////////////////////////////////////////////////////////')
-    print(request.data)
+    print(request)
     print('////////////////////////////////////////////////////////////////////////////////////')
     return Response({"OK": "OK"})
