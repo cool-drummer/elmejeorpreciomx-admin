@@ -1,5 +1,5 @@
 from django.urls import path
-from auth.views import callback
+from auth_mercado_libre.views import callback
 
 urlpatterns = [
     path('callback/', callback),

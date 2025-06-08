@@ -19,11 +19,9 @@ from django.urls import path, include
 from django.shortcuts import redirect
 
 urlpatterns = [
-    # Redirigir la raíz (/) al admin
     path('', lambda request: redirect('admin/', permanent=False)),
-
-    # Ruta al admin de Django
     path('admin/', admin.site.urls),
+
     path('api/', include('test_dan.urls')),
-    path('auth/', include('auth.urls')),
+    path('auth/', include('auth_mercado_libre.urls')),
 ]
