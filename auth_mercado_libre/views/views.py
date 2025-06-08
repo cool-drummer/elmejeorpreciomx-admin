@@ -16,8 +16,8 @@ def callback(request):
     }
     data = {
         'grant_type': 'authorization_code',
-        'client_id': '2392720368406147',
-        'client_secret': 'f1GThB6n9jyCbAgFgK4eWJNsipjGlPwd',
+        'client_id': '5730485929518412',
+        'client_secret': 'SvQ5IGhctNnq1xPmSvHbfVncogW4mdpA',
         'code': request.GET.get('code'),
         'redirect_uri': 'https://admin.elmejorprecio.mx/auth/callback/'
     }
