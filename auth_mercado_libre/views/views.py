@@ -9,6 +9,7 @@ def callback(request):
     print('*****************************')
     print(request.__dict__)
     print('*****************************')
+    print(request.GET.get('code'))
     url = 'https://api.mercadolibre.com/oauth/token'
     headers = {
         'accept': 'application/json',
@@ -19,7 +20,7 @@ def callback(request):
         'client_id': '5730485929518412',
         'client_secret': 'SvQ5IGhctNnq1xPmSvHbfVncogW4mdpA',
         'code': request.GET.get('code'),
-        'redirect_uri': 'https://admin.elmejorprecio.mx/auth/callback/'
+        'redirect_uri': 'https://admin.elmejorprecio.mx/auth/callback'
     }
     response = requests.post(url, headers=headers, data=data)
     print('////////////////////////////////////////////////////////////////////////////////////')
