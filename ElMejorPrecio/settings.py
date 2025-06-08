@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'auth_mercado_libre',
-    'test_dan',
+    'productos',
 ]
 
 MIDDLEWARE = [
