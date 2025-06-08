@@ -25,4 +25,5 @@ urlpatterns = [
     # Ruta al admin de Django
     path('admin/', admin.site.urls),
     path('api/', include('test_dan.urls')),
+    path('auth/', include('auth.urls')),
 ]
