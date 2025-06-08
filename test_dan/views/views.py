@@ -19,6 +19,7 @@ def test(request):
             print(user_data)
             print('--------------------------------------')
         except Exception as ex:
+            print(response.__dict__)
             print(ex)
             return Response({"PUTO": "DAN"})
     else:
