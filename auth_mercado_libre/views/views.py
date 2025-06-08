@@ -1,11 +1,14 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-# import requests
+import requests
 
 
 @api_view(['GET'])
 def callback(request):
+    print('*****************************')
+    print(request.__dict__)
+    print('*****************************')
     url = 'https://api.mercadolibre.com/oauth/token'
     headers = {
         'accept': 'application/json',
@@ -16,11 +19,11 @@ def callback(request):
         'client_id': '2392720368406147',
         'client_secret': 'f1GThB6n9jyCbAgFgK4eWJNsipjGlPwd',
         'code': request.GET.get('code'),
-        'redirect_uri': 'TU_REDIRECT_URI',
-        'code_verifier': 'TU_CODE_VERIFIER'
+        'redirect_uri': 'https://admin.elmejorprecio.mx/auth/callback'
     }
+    response = requests.post(url, headers=headers, data=data)
     print('////////////////////////////////////////////////////////////////////////////////////')
-    print(request)
-    print(data)
+    print(response.status_code)
+    print(response.json())
     print('////////////////////////////////////////////////////////////////////////////////////')
     return Response({"OK": "OK"})
