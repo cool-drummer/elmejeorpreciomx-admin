@@ -14,7 +14,7 @@ def callback(request):
     data = {
         'grant_type': 'authorization_code',
         'client_id': '2392720368406147',
-        'client_secret': '',
+        'client_secret': 'f1GThB6n9jyCbAgFgK4eWJNsipjGlPwd',
         'code': request.GET.get('code'),
         'redirect_uri': 'TU_REDIRECT_URI',
         'code_verifier': 'TU_CODE_VERIFIER'
